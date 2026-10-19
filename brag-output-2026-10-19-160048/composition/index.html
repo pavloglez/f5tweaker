@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Poco F5 Tweaker - Banner</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html, body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #000000;
+        color: #ffffff;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      #root {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        background: #000000;
+      }
+
+      /* Ambient background gradient glow */
+      .ambient-glow {
+        position: absolute;
+        width: 1000px;
+        height: 1000px;
+        border-radius: 50%;
+        filter: blur(160px);
+        opacity: 0.22;
+        pointer-events: none;
+      }
+      #glow-1 {
+        top: -300px;
+        left: -150px;
+        background: #0a84ff;
+      }
+      #glow-2 {
+        bottom: -350px;
+        right: -200px;
+        background: #30d158;
+      }
+
+      .clip {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .scene-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 100px;
+      }
+
+      /* Badge tag */
+      .badge-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 22px;
+        border-radius: 28px;
+        font-size: 17px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        background: rgba(48, 209, 88, 0.16);
+        color: #34c759;
+        border: 1px solid rgba(48, 209, 88, 0.35);
+        margin-bottom: 24px;
+      }
+      .badge-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #34c759;
+        box-shadow: 0 0 10px #34c759;
+      }
+
+      .hero-title {
+        font-size: 78px;
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+        text-align: center;
+        color: #ffffff;
+        max-width: 1400px;
+        margin-bottom: 20px;
+      }
+      .hero-subtitle {
+        font-size: 28px;
+        font-weight: 400;
+        color: #b0b0b5;
+        text-align: center;
+        max-width: 950px;
+        line-height: 1.45;
+      }
+
+      /* Shizuku pill badge */
+      .shizuku-pill {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 16px;
+        border-radius: 20px;
+        background: rgba(48, 209, 88, 0.15);
+        border: 1px solid #34c759;
+        color: #34c759;
+        font-size: 15px;
+        font-weight: 700;
+      }
+
+      /* Inset Grouped Mockup Box */
+      .banner-mockup {
+        width: 1100px;
+        background: #141416;
+        border: 1px solid #2c2c2e;
+        border-radius: 28px;
+        padding: 32px 36px;
+        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.7);
+      }
+      .mockup-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 24px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid #2c2c2e;
+      }
+      .mockup-header h3 {
+        font-size: 26px;
+        font-weight: 700;
+        color: #ffffff;
+      }
+      .mockup-header p {
+        font-size: 15px;
+        color: #b0b0b5;
+        margin-top: 4px;
+      }
+
+      /* Segmented buttons in Scene 2 */
+      .segmented-row {
+        display: flex;
+        gap: 12px;
+        width: 100%;
+        margin-top: 14px;
+      }
+      .seg-btn {
+        flex: 1;
+        background: rgba(44, 44, 46, 0.6);
+        border: 1.5px solid #38383a;
+        border-radius: 16px;
+        padding: 22px 16px;
+        text-align: center;
+      }
+      .seg-btn.active {
+        background: rgba(255, 159, 10, 0.18);
+        border-color: #ff9f0a;
+        box-shadow: 0 0 25px rgba(255, 159, 10, 0.3);
+      }
+      .seg-btn h4 {
+        font-size: 22px;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 4px;
+      }
+      .seg-btn.active h4 {
+        color: #ff9f0a;
+      }
+      .seg-btn span {
+        font-size: 14px;
+        color: #b0b0b5;
+      }
+      .seg-btn.active span {
+        color: #ffd080;
+        font-weight: 600;
+      }
+
+      /* Scene 3: Banner Composition */
+      .banner-frame {
+        width: 1600px;
+        background: linear-gradient(145deg, #161618, #0e0e10);
+        border: 1.5px solid #2e2e32;
+        border-radius: 36px;
+        padding: 60px 80px;
+        box-shadow: 0 40px 100px rgba(0, 0, 0, 0.9);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+      }
+      .banner-top-row {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        margin-bottom: 24px;
+      }
+      .banner-icon-squircle {
+        width: 90px;
+        height: 90px;
+        border-radius: 24px;
+        background: #0056b3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 46px;
+        color: #ffffff;
+        box-shadow: 0 12px 30px rgba(0, 86, 179, 0.4);
+      }
+      .banner-headings {
+        display: flex;
+        flex-direction: column;
+      }
+      .banner-headings h1 {
+        font-size: 64px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: #ffffff;
+        line-height: 1.1;
+      }
+      .banner-headings p {
+        font-size: 22px;
+        font-weight: 500;
+        color: #b0b0b5;
+        margin-top: 6px;
+      }
+
+      .banner-pills-row {
+        display: flex;
+        gap: 16px;
+        margin-top: 32px;
+        margin-bottom: 36px;
+      }
+      .banner-pill {
+        background: #1c1c1e;
+        border: 1px solid #3a3a3e;
+        padding: 14px 26px;
+        border-radius: 20px;
+        font-size: 19px;
+        font-weight: 700;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .banner-pill-highlight {
+        border-color: #34c759;
+        background: rgba(48, 209, 88, 0.12);
+        color: #34c759;
+      }
+
+      .banner-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding-top: 24px;
+        border-top: 1px solid #252528;
+      }
+      .banner-footer-tagline {
+        font-size: 20px;
+        font-weight: 600;
+        color: #ffffff;
+      }
+      .banner-footer-repo {
+        font-size: 19px;
+        font-weight: 600;
+        color: #40a0ff;
+        background: #0d2238;
+        border: 1px solid rgba(64, 160, 255, 0.35);
+        padding: 8px 22px;
+        border-radius: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="16.0"
+      data-width="1920"
+      data-height="1080"
+    >
+      <div id="glow-1" class="ambient-glow" data-layout-allow-overflow></div>
+      <div id="glow-2" class="ambient-glow" data-layout-allow-overflow></div>
+
+      <!-- Audio Track Setup -->
+      <audio
+        id="bg-music"
+        data-start="0"
+        data-duration="16.0"
+        data-track-index="10"
+        data-volume="0.35"
+        src="assets/music/happy-beats-business-moves-vol-11-by-ende-dot-app.mp3"
+      ></audio>
+      <audio
+        id="sfx-pill"
+        data-start="1.6"
+        data-duration="0.09"
+        data-track-index="11"
+        data-volume="0.75"
+        src="assets/sfx/ui/click1.ogg"
+      ></audio>
+      <audio
+        id="sfx-perf"
+        data-start="5.8"
+        data-duration="0.10"
+        data-track-index="12"
+        data-volume="0.80"
+        src="assets/sfx/interface/click_001.ogg"
+      ></audio>
+      <audio
+        id="sfx-bell"
+        data-start="12.65"
+        data-duration="1.0"
+        data-track-index="13"
+        data-volume="0.85"
+        src="assets/sfx/impact/impactBell_heavy_000.ogg"
+      ></audio>
+
+      <!-- SCENE 1: Silicon Awakening (0.0s – 3.7s) -->
+      <div id="scene-1" class="clip" data-start="0" data-duration="3.7" data-track-index="1">
+        <div class="scene-content" id="scene-1-content">
+          <div class="badge-tag" id="s1-badge">
+            <span class="badge-dot"></span>
+            Qualcomm Snapdragon 7+ Gen 2 (marble)
+          </div>
+          <h1 class="hero-title" id="s1-title">
+            Uncage the Flagship Within.
+          </h1>
+          <p class="hero-subtitle" id="s1-subtitle">
+            Bypass conservative MIUI thermal limiters and locked refresh rates without root.
+          </p>
+          <div style="margin-top: 36px;" id="s1-pill-wrap">
+            <div class="shizuku-pill">
+              <span class="badge-dot"></span>
+              Shizuku ADB Authorized
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCENE 2: Performance Showcase (3.7s – 9.0s) -->
+      <div id="scene-2" class="clip" data-start="3.7" data-duration="5.3" data-track-index="2">
+        <div class="scene-content" id="scene-2-content">
+          <div class="banner-mockup" id="s2-mockup">
+            <div class="mockup-header">
+              <div>
+                <h3>Global Master Profile</h3>
+                <p>One-tap hardware governor synchronization</p>
+              </div>
+              <div class="shizuku-pill">
+                <span class="badge-dot"></span>
+                Active
+              </div>
+            </div>
+
+            <div class="segmented-row">
+              <div class="seg-btn" id="seg-battery">
+                <h4>Battery</h4>
+                <span>60Hz • Power Saver</span>
+              </div>
+              <div class="seg-btn" id="seg-balanced">
+                <h4>Balanced</h4>
+                <span>90Hz • Dynamic</span>
+              </div>
+              <div class="seg-btn active" id="seg-perf">
+                <h4>Performance</h4>
+                <span>120Hz • Max Boost</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCENE 3: The Definitive Banner (9.0s – 16.0s) -->
+      <div id="scene-3" class="clip" data-start="9.0" data-duration="7.0" data-track-index="3">
+        <div class="scene-content" id="scene-3-content">
+          <div class="banner-frame" id="s3-banner-frame">
+            <div class="banner-top-row" id="s3-top-row">
+              <div class="banner-icon-squircle">⚡</div>
+              <div class="banner-headings">
+                <h1>POCO F5 TWEAKER</h1>
+                <p>Hardware & Kernel Tuning (marble) • HyperOS & MIUI</p>
+              </div>
+            </div>
+
+            <div class="banner-pills-row" id="s3-pills">
+              <div class="banner-pill">⚡ Locked 120Hz</div>
+              <div class="banner-pill">🔥 Joyose Bypassed</div>
+              <div class="banner-pill">🎮 Vulkan SkiaVK</div>
+              <div class="banner-pill banner-pill-highlight">🛡️ Zero Root</div>
+            </div>
+
+            <div class="banner-footer" id="s3-footer">
+              <div class="banner-footer-tagline">
+                Uncage Snapdragon 7+ Gen 2 Performance
+              </div>
+              <div class="banner-footer-repo">
+                github.com/pavloglez/f5tweaker
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const tl = gsap.timeline({ paused: true });
+
+      // Ambient breathing
+      tl.to("#glow-1", { scale: 1.15, opacity: 0.32, duration: 4, repeat: 3, yoyo: true, ease: "sine.inOut" }, 0);
+      tl.to("#glow-2", { scale: 1.2, opacity: 0.28, duration: 3.5, repeat: 3, yoyo: true, ease: "sine.inOut" }, 0);
+
+      // --- SCENE 1 ---
+      tl.fromTo("#s1-badge", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.2);
+      tl.fromTo("#s1-title", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 0.4);
+      tl.fromTo("#s1-subtitle", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 0.7);
+      // Cue lock at 1.60s // beat-locked: 1.60s
+      tl.fromTo("#s1-pill-wrap", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.5)" }, 1.55);
+      tl.to("#scene-1-content", { opacity: 0, scale: 0.96, duration: 0.35, ease: "power2.in" }, 3.35);
+
+      // --- SCENE 2 ---
+      // Cue lock at 3.70s // beat-locked: 3.70s
+      tl.fromTo("#s2-mockup", { opacity: 0, y: 40, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "power2.out" }, 3.7);
+      tl.fromTo("#seg-battery", { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.3 }, 4.2);
+      tl.fromTo("#seg-balanced", { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.3 }, 4.4);
+      // Cue lock at 5.80s // beat-locked: 5.80s
+      tl.fromTo("#seg-perf", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1.03, duration: 0.35, ease: "back.out(1.4)" }, 5.75);
+      tl.to("#scene-2-content", { opacity: 0, scale: 0.96, duration: 0.35, ease: "power2.in" }, 8.65);
+
+      // --- SCENE 3 (Banner Payoff) ---
+      // Entrance at 9.0s
+      tl.fromTo("#s3-banner-frame", { opacity: 0, scale: 0.92, y: 30 }, { opacity: 1, scale: 1, y: 0, duration: 0.6, ease: "power2.out" }, 9.0);
+      tl.fromTo("#s3-top-row", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4 }, 9.4);
+      tl.fromTo(".banner-pill", { opacity: 0, y: 20, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, stagger: 0.15, duration: 0.4, ease: "back.out(1.3)" }, 9.8);
+      tl.fromTo("#s3-footer", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 10.8);
+
+      // Final resonant hit at 12.65s // beat-locked: 12.65s
+      tl.to(".banner-icon-squircle", { scale: 1.1, duration: 0.25, yoyo: true, repeat: 1, ease: "power1.inOut" }, 12.65);
+
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

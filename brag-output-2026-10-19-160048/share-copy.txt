@@ -1,0 +1,1 @@
+Poco F5 Tweaker (`marble`): Uncaged Snapdragon 7+ Gen 2 performance with locked 120Hz refresh rates, Vulkan SkiaVK acceleration, and zero root.

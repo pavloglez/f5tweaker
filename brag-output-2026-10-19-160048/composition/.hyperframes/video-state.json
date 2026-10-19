@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "historyId": "39d9815a-7c58-4e1e-9b15-f04f18778cb7",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "AGENTS.md": {
+      "hash": "1d4f0c8ca2507b94fd7c9df709fff01416adbd51a0f922b9d6ed2f40129147d5",
+      "content": "/home/pablo/.cache/hyperframes/history/39d9815a-7c58-4e1e-9b15-f04f18778cb7/blobs/1d/1d4f0c8ca2507b94fd7c9df709fff01416adbd51a0f922b9d6ed2f40129147d5"
+    },
+    "CLAUDE.md": {
+      "hash": "1d4f0c8ca2507b94fd7c9df709fff01416adbd51a0f922b9d6ed2f40129147d5",
+      "content": "/home/pablo/.cache/hyperframes/history/39d9815a-7c58-4e1e-9b15-f04f18778cb7/blobs/1d/1d4f0c8ca2507b94fd7c9df709fff01416adbd51a0f922b9d6ed2f40129147d5"
+    },
+    "assets/sfx/impact/impactBell_heavy_000.ogg": {
+      "hash": "94b8bb5f2d43ab65e4bcc32b28562416e9bc2c51d9fd4be1e333660ee52f977f",
+      "content": "/home/pablo/.cache/hyperframes/history/39d9815a-7c58-4e1e-9b15-f04f18778cb7/blobs/94/94b8bb5f2d43ab65e4bcc32b28562416e9bc2c51d9fd4be1e333660ee52f977f"
+    },
+    "assets/sfx/interface/click_001.ogg": {
+      "hash": "ccfb7fa0cccdd9faec0eb16033c732b1e308d139d80f799161495d58f7adcdb9",
+      "content": "/home/pablo/.cache/hyperframes/history/39d9815a-7c58-4e1e-9b15-f04f18778cb7/blobs/cc/ccfb7fa0cccdd9faec0eb16033c732b1e308d139d80f799161495d58f7adcdb9"
+    },
+    "assets/sfx/ui/click1.ogg": {
+      "hash": "59175ac17cd49a68dd736285738441287636112a84a6f7ce0d89921bda5a5360",
+      "content": "/home/pablo/.cache/hyperframes/history/39d9815a-7c58-4e1e-9b15-f04f18778cb7/blobs/59/59175ac17cd49a68dd736285738441287636112a84a6f7ce0d89921bda5a5360"
+    },
+    "hyperframes.json": {
+      "hash": "53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50",
+      "content": "/home/pablo/.cache/hyperframes/history/39d9815a-7c58-4e1e-9b15-f04f18778cb7/blobs/53/53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50"
+    },
+    "index.html": {
+      "hash": "60e5e7ee4302e5405a6abe1e10a15f7af99e31b7045113a304eb3ebfed4132f1",
+      "content": "/home/pablo/.cache/hyperframes/history/39d9815a-7c58-4e1e-9b15-f04f18778cb7/blobs/60/60e5e7ee4302e5405a6abe1e10a15f7af99e31b7045113a304eb3ebfed4132f1"
+    },
+    "meta.json": {
+      "hash": "232aec5dbd28a362202f6809ac7624ad42efb9b8caf6c5837e1de554ca9def88",
+      "content": "/home/pablo/.cache/hyperframes/history/39d9815a-7c58-4e1e-9b15-f04f18778cb7/blobs/23/232aec5dbd28a362202f6809ac7624ad42efb9b8caf6c5837e1de554ca9def88"
+    },
+    "package.json": {
+      "hash": "42cb202433bfd6c6a59900a1cc60d07f6a8546c56b31a7c1c018f7d44cd1a349",
+      "content": "/home/pablo/.cache/hyperframes/history/39d9815a-7c58-4e1e-9b15-f04f18778cb7/blobs/42/42cb202433bfd6c6a59900a1cc60d07f6a8546c56b31a7c1c018f7d44cd1a349"
+    },
+    "assets/music/happy-beats-business-moves-vol-11-by-ende-dot-app.mp3": {
+      "hash": "364a546834db4c0c2e3b3240eb6df03e98b7362230154b04c5c614442f6660d7",
+      "content": "/home/pablo/.cache/hyperframes/history/39d9815a-7c58-4e1e-9b15-f04f18778cb7/blobs/36/364a546834db4c0c2e3b3240eb6df03e98b7362230154b04c5c614442f6660d7"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": {
+      "revision": null,
+      "id": "07561533-244b-45eb-a104-5f7231132015"
+    },
+    "revisions": {},
+    "unversioned": [
+      {
+        "id": "07561533-244b-45eb-a104-5f7231132015",
+        "scope": "project",
+        "report": "/home/pablo/projects/aiLab/f5tweaker/brag-output-2026-10-19-160048/composition/.hyperframes/artifacts/checks/07561533-244b-45eb-a104-5f7231132015.json",
+        "metadata": {
+          "ok": true,
+          "browserSkipped": false,
+          "options": {
+            "samples": 9,
+            "atTransitions": false,
+            "maxIssues": 80,
+            "collapseStatic": true,
+            "tolerance": 2,
+            "timeout": 3000,
+            "contrast": true,
+            "strict": false,
+            "snapshots": false,
+            "browserGpuMode": "auto"
+          }
+        },
+        "createdAt": 1792447347118,
+        "contentHash": "771182190a740ec03350f04bd081058594720cd23745128fd5b5ee8319c641ea",
+        "revision": null,
+        "inputFingerprint": "e6da51f7ff4353c59b6c72b16facc0b7395bb81d26bca2c532190491fea061d2",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "snapshots": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "renders": {
+    "latest": {
+      "id": "ec7dade4-a7c3-45cd-98bf-a3e5e8b2604a",
+      "completedAt": 1792447373698,
+      "output": "/home/pablo/projects/aiLab/f5tweaker/brag-output-2026-10-19-160048/brag.mp4",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
+}

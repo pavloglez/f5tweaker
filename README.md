@@ -2,7 +2,7 @@
 
 > Android hardware, kernel, and display tuning suite for the Poco F5 / Redmi Note 12 Turbo (Snapdragon 7+ Gen 2) via Shizuku ADB — zero root required.
 
-![Poco F5 Tweaker Poster](brag-output/brag.jpg)
+![Poco F5 Tweaker Banner](banner.png)
 
 ---
 
