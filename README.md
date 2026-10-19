@@ -52,7 +52,31 @@ One-tap system overrides that synchronize display, scheduler, network, and memor
 
 1. **Device**: Poco F5 or Redmi Note 12 Turbo (`marble`).
 2. **OS**: MIUI 14 or Xiaomi HyperOS (Android 13+).
-3. **[Shizuku](https://shizuku.rikka.app/)**: Installed and running (started via Wireless Debugging or computer ADB).
+3. **[Shizuku](https://shizuku.rikka.app/)**: Installed and running (v13.5+ recommended).
+
+---
+
+## Enabling Shizuku on Poco F5 (HyperOS / MIUI)
+
+Because MIUI and HyperOS kill background services aggressively and enforce custom security restrictions on ADB, setting up Shizuku on the Poco F5 requires Xiaomi-specific configuration. 
+
+*(Reference: [Shizuku on Xiaomi MIUI & HyperOS Guide](https://shizukudownload.com/guides/xiaomi/))*
+
+### Step 1: Activate Shizuku via Wireless Debugging (Recommended)
+1. **Enable Developer Options**: Go to **Settings** → **About phone** → tap **OS version** (or **MIUI version**) 7 times until unlocked.
+2. **Turn on Wireless Debugging**: Go to **Settings** → **Additional settings** → **Developer options** → toggle **Wireless debugging** ON (must be connected to Wi-Fi).
+3. **Pair with Shizuku**: Open the **Shizuku** app → tap **Pairing** under Wireless Debugging → enter the 6-digit code shown in Developer options.
+4. **Start Service**: In Shizuku, tap **Start**.
+> *Tip:* Activating via Wireless Debugging bypasses Xiaomi's requirement to sign in to a Mi Account. If you activate over USB with a PC instead, you must sign in to a Mi Account and enable both **USB debugging** and **USB debugging (Security settings) / Install via USB**.
+
+### Step 2: Critical Xiaomi Keep-Alive Settings (Prevent Service Killing)
+MIUI/HyperOS will automatically kill the Shizuku background daemon unless all 3 settings are configured:
+1. **Allow Autostart**:
+   - Open the **Security** app → **Manage apps** (or **Permissions**) → **Autostart** → toggle **ON** for **Shizuku**.
+2. **Disable Battery Restrictions**:
+   - Go to **Settings** → **Apps** → **Manage apps** → **Shizuku** → **Battery saver** → select **No restrictions**.
+3. **Lock Shizuku in Recents**:
+   - Open the **Recent Apps** screen, swipe down (or long-press) on the **Shizuku** preview card, and tap the **Lock icon** so the system cleaner does not clear it.
 
 ---
 
