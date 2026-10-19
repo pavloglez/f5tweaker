@@ -1,1 +1,0 @@
-Uncaged the Snapdragon 7+ Gen 2: Poco F5 Tweaker unlocks 120Hz locked displays, Vulkan SkiaVK rendering, and MIUI thermal limit overrides via Shizuku ADB — zero root required.
